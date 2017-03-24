@@ -11,16 +11,41 @@ use App\ruangann;
 class ruanganncontroller extends Controller
 {
     public function awal(){
-    	return "Hello dari RuanganController";
+        return view('ruangann.awal',['data'=>ruangann::all()]);
     }
 
     public function tambah(){
-    	return $this->simpan();
+        return view('ruangann.tambah');
     }
-    public function simpan(){
-    	$ruangann = new ruangann();	
-    	$ruangann->title="Ruang 406";
-    	$ruangann->save();
-    	return "data dengan username {$ruangann->title} telah disimpan";
+    public function simpan (request $input){
+        $ruangann = new ruangann; 
+        $ruangann->title=$input->title;
+        $informasi=$ruangann->save()?'Berhasil simpan data' :'Gagal simpan data';
+        return redirect ('ruangann')->with(['informasi'=>$informasi]);
+    }
+    
+    public function edit($id)
+    {
+        $ruangann=ruangann::find($id);
+        return view ('ruangann.edit')->with(array('ruangann'=>$ruangann));
+    }
+    public function lihat($id)
+    {
+        $ruangann=ruangann::find($id);
+        return view('ruangann.lihat')->with(array('ruangann'=>$ruangann));
+    }
+    public function update ($id,request $input)
+    {
+        $ruangann= ruangann::find($id);
+        $ruangann->title=$input->title;
+        $informasi=$ruangann->save()?'Berhasil simpan data' :'Gagal update data';
+        return redirect ('ruangann')->with(['informasi'=>$informasi]);
+    }
+    public function hapus($id)
+    {
+        $ruangann = ruangann::find($id);
+        $informasi=$ruangann->delete()? 'Berhasil hapus data':'Gagal hapus data';
+        return redirect ('ruangann')->with(['informasi'=>$informasi]);
     }
 }
+
