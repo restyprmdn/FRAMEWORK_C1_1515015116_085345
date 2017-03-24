@@ -3,7 +3,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<strong>Seluruh Data Ruangan</strong>
-		<a href="{{url('ruangann/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"></i> Ruangan</a>
+		<a href="{{url('ruangann/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"></i>ruangann</a>
 		<div class="clearfix"></div>
 	</div>
 	<table class="table">

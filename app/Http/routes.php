@@ -69,3 +69,4 @@ Route::post('ruangann/simpan','ruanganncontroller@simpan');
 Route::get('ruangann/edit/{ruangann}','ruanganncontroller@edit');
 Route::post('ruangann/edit/{ruangann}','ruanganncontroller@update');
 Route::get('ruangann/hapus/{ruangann}','ruanganncontroller@hapus');
+
