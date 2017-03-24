@@ -59,7 +59,7 @@ Route::post('pengguna/edit/{pengguna}','PenggunaController@update');
 Route::get('pengguna/hapus/{pengguna}','PenggunaController@hapus');
 
 Route::get('matkul/lihat/{matkul}','matkulcontroller@lihat');
-Route::post('matkul/simpan','matkulcontroller@simpan');
+Route::post('matkul/simpan','matakuliahController@simpan');
 Route::get('matkul/edit/{matkul}','matkulcontroller@edit');
 Route::post('matkul/edit/{matkul}','matkulcontroller@update');
 Route::get('matkul/hapus/{matkul}','matkulcontroller@hapus');
