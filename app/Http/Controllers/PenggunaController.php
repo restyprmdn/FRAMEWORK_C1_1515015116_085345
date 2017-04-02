@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Pengguna;
+use App\pengguna;
 
 
 class PenggunaController extends Controller
@@ -41,7 +41,7 @@ class PenggunaController extends Controller
    {
       return view('pengguna.tambah');
    }
-   public function simpan(Requests $input)
+   public function simpann(Requests $input)
    {
     $pengguna = new pengguna();
     $pengguna->username = $input->username;

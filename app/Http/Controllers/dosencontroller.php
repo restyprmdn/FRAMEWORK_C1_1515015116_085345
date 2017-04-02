@@ -10,20 +10,52 @@ use App\dosen;
 
 class dosencontroller extends Controller
 {
-    public function awal(){
-    	return "Hello dari dosenController";
+    public function awal()
+{
+      return view('dosen.awal',['data'=>dosen::all()]);
     }
 
-    public function tambah(){
-    	return $this->simpan();
-    }
-    public function simpan(){
-    	$dosen = new dosen();	
-    	$dosen->nama="Resty Primadana";
-    	$dosen->nip="FKTI0001";
-    	$dosen->alamat="Jalan Juanda 8 Gg Mangga 3";
-        $dosen->pengguna_id=1;
-    	$dosen->save();
-    	return "data dengan username {$dosen->nama} telah disimpan";
-    }
+    public function tambah()
+
+   {
+      return view('dosen.tambah');
+   }
+   public function simpan(Requests $input)
+   {
+    $dosen = new dosen();
+    $dosen->nama = $input->nama;
+    $dosen->nip = $input->nip;
+    $dosen->alamat = $input->alamat;
+    $informasi = $dosen->save() ? 'berhasil simpan data' : 'Gagal simpan data';
+    return redirect('dosen')->with(['informasi'=>$informasi]);
+
+   }
+
+   public function edit($id)
+   {
+    $dosen = dosen :: find($id);
+    return view('dosen.edit')->with(array('dosen'=>$dosen));
+   }
+
+   public function lihat($id)
+   {
+    $dosen = dosen :: find($id);
+    return view('dosen.lihat')->with(array('dosen'=>$dosen));
+   }
+
+   public function update($id,Requests $input)
+   {
+    $dosen = dosen ::find($id);
+    $dosen->nama = $input->nama;
+    $dosen->nip = $input->nip;
+    $informasi = $dosen->save() ? 'berhasil simpan data' : 'Gagal simpan data';
+    return redirect('dosen')->with(['informasi'=>$informasi]);
+   }
+
+   public function hapus($id)
+   {
+    $dosen = dosen ::find($id);
+    $informasi = $dosen->delete() ? 'berhasil simpan data' : 'Gagal simpan data';
+    return redirect('dosen')->with(['informasi'=>$informasi]);
+   }
 }

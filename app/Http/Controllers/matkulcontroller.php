@@ -10,25 +10,6 @@ use App\matkul;
 
 
 class matkulcontroller extends Controller
-// {
-//      public function awal()
-//     {
-//      return "Hello dari matakuliahController";
-//     }
-//     public function tambah()
-//     {
-//      return $this->simpan();
-//     }
-//     public function simpan()
-//     {
-//      $matkul = new matkul();
-//      $matkul->title_matakuliah ='framework';
-//      $matkul->keterangan_matakuliah ='wajib';
-//      $matkul->save();
-//      return "data dengan title_matakuliah{$matkul->title_matakuliah} telah disimpan";
-//     }
-// }
-
 
 {
 

@@ -42,7 +42,7 @@
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
 							<li><a href="{{url('mahasiswa')}}">Data Mahasiswa</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('jadwal_matakuliah')}}">Jadwal Mahasiswa</a></li>							
+							<li><a href="{{url('jadwalmatkul')}}">Jadwal Mahasiswa</a></li>							
 						</ul>
 					</li>
 					<li class="dropdown active">
@@ -50,7 +50,7 @@
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
 							<li><a href="{{url('dosen')}}">Data dosen</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('dosen_matakuliah')}}">Jadwal Dosen Mengajar</a></li>							
+							<li><a href="{{url('dosenmatkul')}}">Jadwal Dosen Mengajar</a></li>							
 						</ul>
 					</li>
 
