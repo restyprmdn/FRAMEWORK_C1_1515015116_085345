@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class dosen extends Model
 {
     protected $table ='dosen';//mendefinisikan nama tabel dari model dosen
-	protected $guarded =['id'];//Semua kolom yang kita tambahkan ke $guarded akan diabaikan oleh Eloquent ketika kita melakukan insert/update
+	protected $fillable =['nama','nip','alamat','pengguna_id'];//Semua kolom yang kita tambahkan ke $guarded akan diabaikan oleh Eloquent ketika kita melakukan insert/update
 
 	public function pengguna()//mendefinisikan nama tabel dari model pengguna
 	{
@@ -19,6 +19,16 @@ class dosen extends Model
 		return $this->hasMany(dosenmatkul::class,'dosen_id');//mengembalikan nilai return dengn mendefinisikan hasMan yang menghubungkan model dosen dengan pengguna yang berelasi one to many dengan foreign key dosen_id yang ada di model dosenmatkul
 		
 	}
+	public function getUsernameAttribute(){
+        return $this->pengguna->username;
+    }
+    public function listDosenDanNip(){
+      $out =[];
+      foreach ($this->all() as $dosen){
+        $out[$dosen->id] = "{$dosen->nama} ({$dosen->nip})";
+      }
+      return $out;
+    }
 }
 
 //pada model ini dosen berelasi dengan pengguna

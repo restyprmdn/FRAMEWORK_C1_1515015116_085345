@@ -19,4 +19,17 @@ class mahasiswa extends Model
     {
     	return $this->hasMany(jadwalmatkul::class,'mahasiswa_id');//mengembalikan nilai return dengan mendefiniskan hasMany pada model dosenmatkul dengan foreign key matakuliah_id, karena relasi antara mahasiswa dan jadwalmatkul adalah one to many yang artinya satu mahasiswa dapat memiliki beberapa jadwal dan satu jadwal hanya dimiliki satu mahasiswa
     }
+    public function getUsernameAttribute(){
+        return $this->pengguna->username;
+    }
+
+    public function listMahasiswaDanNim()
+    {
+        $out=[];
+        foreach($this->all() as $mahasiswa)
+        {
+            $out[$mahasiswa->id]="{$mahasiswa->nama} ({$mahasiswa->nim})";
+        }
+        return $out;
+    }
 }

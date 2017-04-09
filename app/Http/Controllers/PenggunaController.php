@@ -10,26 +10,6 @@ use App\pengguna;
 
 
 class PenggunaController extends Controller
-// {
-//     public function awal()
-// {
-//      return "Hello dari penggunaController";
-//     }
-//        public function tambah()
-//    {
-//      return $this->simpan();
-//    }
-//    public function simpan()
-//    {
-//      $pengguna = new pengguna();
-//      $pengguna->username = 'safitri';
-//      $pengguna->password = 'rulita';
-//      $pengguna->save();
-//      return"data dengan username {$pengguna->username} telah disimpan";
-
-//    }
-// }
-
 {
     public function awal()
 {
@@ -41,7 +21,7 @@ class PenggunaController extends Controller
    {
       return view('pengguna.tambah');
    }
-   public function simpann(Requests $input)
+   public function simpan(Request $input)
    {
     $pengguna = new pengguna();
     $pengguna->username = $input->username;
@@ -63,7 +43,7 @@ class PenggunaController extends Controller
     return view('pengguna.lihat')->with(array('pengguna'=>$pengguna));
    }
 
-   public function update($id,Requests $input)
+   public function update($id,Request $input)
    {
     $pengguna = pengguna ::find($id);
     $pengguna->username = $input->username;

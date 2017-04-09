@@ -13,11 +13,12 @@
 				<th>Nama</th>
 				<th>NIM</th>
 				<th>Alamat</th>
+				<th>Aksi</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php $x=1; ?>
-			@foreach ($data as $mahasiswa)
+			@foreach ($semuamahasiswa as $mahasiswa)
 			<tr>
 				<td>{{ $x++}}</td>
 				<td>{{ $mahasiswa->nama or 'nama kosong' }}</td>

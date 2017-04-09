@@ -53,7 +53,7 @@ Route::get('jadwalmatkul','jadwalmatkulController@awal');
 Route::get('jadwalmatkul/tambah','jadwalmatkulController@tambah');
 
 Route::get('pengguna/lihat/{pengguna}','PenggunaController@lihat');
-Route::post('pengguna/simpann','PenggunaController@simpan');
+Route::post('pengguna/simpan','PenggunaController@simpan');
 Route::get('pengguna/edit/{pengguna}','PenggunaController@edit');
 Route::post('pengguna/edit/{pengguna}','PenggunaController@update');
 Route::get('pengguna/hapus/{pengguna}','PenggunaController@hapus');
@@ -81,3 +81,15 @@ Route::post('jadwalmatkul/simpan','jadwalmatkulController@simpan');
 Route::get('jadwalmatkul/edit/{jadwalmatkul}','jadwalmatkulController@edit');
 Route::post('jadwalmatkul/edit/{jadwalmatkul}','jadwalmatkulController@update');
 Route::get('jadwalmatkul/hapus/{jadwalmatkul}','jadwalmatkulController@hapus');
+
+Route::get('mahasiswa/lihat/{mahasiswa}','mahasiswaController@lihat');
+Route::post('mahasiswa/simpan','mahasiswaController@simpan');
+Route::get('mahasiswa/edit/{mahasiswa}','mahasiswaController@edit');
+Route::post('mahasiswa/edit/{mahasiswa}','mahasiswaController@update');
+Route::get('mahasiswa/hapus/{mahasiswa}','mahasiswaController@hapus');
+
+Route::get('dosen/lihat/{dosen}','dosenController@lihat');
+Route::post('dosen/simpan','dosenController@simpan');
+Route::get('dosen/edit/{dosen}','dosenController@edit');
+Route::post('dosen/edit/{dosen}','dosenController@update');
+Route::get('dosen/hapus/{dosen}','dosenController@hapus');
